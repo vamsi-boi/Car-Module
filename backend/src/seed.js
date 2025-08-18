@@ -22,184 +22,184 @@ const connectDB = async () => {
 // Sample Indian cars data
 const sampleCars = [
   {
-    name: "Maruti Suzuki Swift",
+    name: "Maruti Swift Dzire",
     type: "Hatchback",
-    pricePerDay: 1500,
+    pricePerDay: 1400,
     seats: 5,
     fuelType: "Petrol",
     imageUrl: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
-    features: ["AC", "Music System", "Power Steering"]
+    features: ["AC", "Power Steering", "Central Locking", "ABS"]
   },
   {
-    name: "Hyundai Creta",
-    type: "SUV",
-    pricePerDay: 2500,
+    name: "Tata Indica",
+    type: "Hatchback",
+    pricePerDay: 1000,
     seats: 5,
     fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg",
-    features: ["AC", "GPS", "Sunroof", "Reverse Camera"]
+    imageUrl: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
+    features: ["AC", "Power Steering", "Music System"]
   },
   {
-    name: "Honda City",
-    type: "Sedan",
-    pricePerDay: 2000,
-    seats: 5,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg",
-    features: ["AC", "Music System", "Power Windows", "ABS"]
-  },
-  {
-    name: "Tata Nexon EV",
-    type: "Electric",
-    pricePerDay: 2800,
-    seats: 5,
-    fuelType: "Electric",
-    imageUrl: "https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg",
-    features: ["Fast Charging", "AC", "Digital Cluster", "Regenerative Braking"]
-  },
-  {
-    name: "Mahindra Thar",
-    type: "SUV",
-    pricePerDay: 3200,
-    seats: 4,
-    fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg",
-    features: ["4WD", "AC", "Hard Top", "Hill Hold Control"]
-  },
-  {
-    name: "Maruti Suzuki Alto K10",
+    name: "Hyundai i10",
     type: "Hatchback",
     pricePerDay: 1200,
     seats: 5,
-    fuelType: "CNG",
-    imageUrl: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
-    features: ["AC", "Power Steering", "Central Locking"]
-  },
-  {
-    name: "Toyota Innova Crysta",
-    type: "SUV",
-    pricePerDay: 3500,
-    seats: 8,
-    fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg",
-    features: ["AC", "GPS", "Captain Seats", "Automatic"]
-  },
-  {
-    name: "BMW 3 Series",
-    type: "Luxury",
-    pricePerDay: 6500,
-    seats: 5,
     fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
-    features: ["Leather Seats", "Sunroof", "Premium Sound", "Automatic"]
+    imageUrl: "https://images.pexels.com/photos/1319845/pexels-photo-1319845.jpeg",
+    features: ["AC", "Power Windows", "Central Locking"]
   },
   {
-    name: "Hyundai i20",
+    name: "Maruti Alto 800",
     type: "Hatchback",
-    pricePerDay: 1800,
+    pricePerDay: 900,
+    seats: 4,
+    fuelType: "Petrol",
+    imageUrl: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
+    features: ["Basic AC", "Power Steering"]
+  },
+  {
+    name: "Hyundai Santro",
+    type: "Hatchback",
+    pricePerDay: 1100,
     seats: 5,
     fuelType: "Petrol",
     imageUrl: "https://images.pexels.com/photos/1319845/pexels-photo-1319845.jpeg",
-    features: ["AC", "Touchscreen", "Reverse Camera", "Wireless Charging"]
+    features: ["AC", "Power Steering", "Music System"]
   },
   {
-    name: "Kia Sonet",
+    name: "Tata Nano",
+    type: "Hatchback",
+    pricePerDay: 800,
+    seats: 4,
+    fuelType: "Petrol",
+    imageUrl: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
+    features: ["Basic Features", "Compact Design"]
+  },
+  {
+    name: "Maruti Wagon R",
+    type: "Hatchback",
+    pricePerDay: 1300,
+    seats: 5,
+    fuelType: "CNG",
+    imageUrl: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
+    features: ["AC", "Power Steering", "Tall Boy Design"]
+  },
+  {
+    name: "Hyundai Accent",
     type: "SUV",
-    pricePerDay: 2200,
+    pricePerDay: 1800,
     seats: 5,
     fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg",
-    features: ["AC", "Sunroof", "Connected Car Tech", "LED Headlights"]
+    imageUrl: "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg",
+    features: ["AC", "Power Windows", "Music System", "ABS"]
   },
   {
-    name: "Maruti Suzuki Dzire",
+    name: "Tata Indigo",
     type: "Sedan",
     pricePerDay: 1600,
     seats: 5,
-    fuelType: "CNG",
-    imageUrl: "https://images.pexels.com/photos/1335074/pexels-photo-1335074.jpeg",
-    features: ["AC", "Power Windows", "ABS", "Dual Airbags"]
-  },
-  {
-    name: "Tata Harrier",
-    type: "SUV",
-    pricePerDay: 3000,
-    seats: 5,
     fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/2506947/pexels-photo-2506947.jpeg",
-    features: ["Panoramic Sunroof", "JBL Sound", "Terrain Modes", "AC"]
+    imageUrl: "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg",
+    features: ["AC", "Power Windows", "Central Locking"]
   },
   {
-    name: "Honda Amaze",
+    name: "Maruti Esteem",
     type: "Sedan",
-    pricePerDay: 1700,
-    seats: 5,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/1592620/pexels-photo-1592620.jpeg",
-    features: ["AC", "Touchscreen", "CVT", "Honda SENSING"]
-  },
-  {
-    name: "MG Hector",
-    type: "SUV",
-    pricePerDay: 2900,
-    seats: 5,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/1429775/pexels-photo-1429775.jpeg",
-    features: ["Panoramic Sunroof", "AI Assistant", "Connected Car", "Premium Interior"]
-  },
-  {
-    name: "Hyundai Verna",
-    type: "Sedan",
-    pricePerDay: 2100,
-    seats: 5,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/1104014/pexels-photo-1104014.jpeg",
-    features: ["Sunroof", "Wireless Charging", "BlueLink", "Premium Sound"]
-  },
-  {
-    name: "Maruti Suzuki Ertiga",
-    type: "SUV",
-    pricePerDay: 2400,
-    seats: 7,
-    fuelType: "CNG",
-    imageUrl: "https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg",
-    features: ["AC", "Captain Seats", "Smart Play", "ESP"]
-  },
-  {
-    name: "Audi A4",
-    type: "Luxury",
-    pricePerDay: 7200,
+    pricePerDay: 1500,
     seats: 5,
     fuelType: "Petrol",
     imageUrl: "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg",
-    features: ["Leather Interior", "Virtual Cockpit", "Matrix LED", "Quattro AWD"]
+    features: ["AC", "Power Steering", "Music System"]
   },
   {
-    name: "Ford EcoSport",
+    name: "Mahindra Scorpio",
     type: "SUV",
-    pricePerDay: 2000,
+    pricePerDay: 2800,
+    seats: 7,
+    fuelType: "Diesel",
+    imageUrl: "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg",
+    features: ["4WD", "AC", "Power Steering", "High Ground Clearance"]
+  },
+  {
+    name: "Tata Sumo",
+    type: "SUV",
+    pricePerDay: 2200,
+    seats: 9,
+    fuelType: "Diesel",
+    imageUrl: "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg",
+    features: ["AC", "High Seating", "Spacious Interior"]
+  },
+  {
+    name: "Maruti Omni",
+    type: "SUV",
+    pricePerDay: 1400,
+    seats: 8,
+    fuelType: "Petrol",
+    imageUrl: "https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg",
+    features: ["AC", "Sliding Doors", "Commercial Use"]
+  },
+  {
+    name: "Hyundai Getz",
+    type: "Hatchback",
+    pricePerDay: 1300,
     seats: 5,
     fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg",
-    features: ["AC", "SYNC", "Hill Launch Assist", "Emergency Assist"]
+    imageUrl: "https://images.pexels.com/photos/1319845/pexels-photo-1319845.jpeg",
+    features: ["AC", "Power Windows", "ABS", "Airbags"]
   },
   {
-    name: "Mahindra XUV700",
-    type: "SUV",
-    pricePerDay: 3800,
-    seats: 7,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/3156482/pexels-photo-3156482.jpeg",
-    features: ["AdrenoX", "Sky Roof", "ADAS", "Sony 3D Sound"]
-  },
-  {
-    name: "Mercedes-Benz C-Class",
+    name: "Tata Safari",
     type: "Luxury",
-    pricePerDay: 8500,
+    pricePerDay: 3500,
+    seats: 7,
+    fuelType: "Diesel",
+    imageUrl: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
+    features: ["4WD", "Leather Seats", "Premium Interior", "AC"]
+  },
+  {
+    name: "Mahindra Bolero",
+    type: "SUV",
+    pricePerDay: 2000,
+    seats: 7,
+    fuelType: "Diesel",
+    imageUrl: "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg",
+    features: ["AC", "High Ground Clearance", "Rugged Build"]
+  },
+  {
+    name: "Honda Civic",
+    type: "Luxury",
+    pricePerDay: 2800,
     seats: 5,
     fuelType: "Petrol",
     imageUrl: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
-    features: ["MBUX", "Burmester Sound", "Air Suspension", "AMG Line"]
+    features: ["AC", "Automatic", "Premium Interior", "Sunroof"]
+  },
+  {
+    name: "Maruti Zen",
+    type: "Hatchback", 
+    pricePerDay: 1100,
+    seats: 5,
+    fuelType: "Petrol",
+    imageUrl: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
+    features: ["AC", "Power Steering", "Music System"]
+  },
+  {
+    name: "Tata Venture",
+    type: "SUV",
+    pricePerDay: 1800,
+    seats: 7,
+    fuelType: "Diesel",
+    imageUrl: "https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg",
+    features: ["AC", "Spacious", "Commercial Vehicle"]
+  },
+  {
+    name: "Hyundai Verna",
+    type: "Luxury",
+    pricePerDay: 2500,
+    seats: 5,
+    fuelType: "Petrol",
+    imageUrl: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
+    features: ["AC", "Automatic", "Sunroof", "Premium Features"]
   }
 ];
 

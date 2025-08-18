@@ -4,14 +4,23 @@
   "description": "Complete full-stack car rental website with frontend and backend",
   "main": "index.js",
   "scripts": {
-    "dev": "cd frontend && python -m http.server 5173",
+    "dev": "cd frontend && npx serve -s . -l 5173",
     "backend": "npm --prefix backend start",
     "backend-dev": "npm --prefix backend run dev",
     "seed": "npm --prefix backend run seed",
     "install-backend": "npm --prefix backend install",
     "setup": "npm run install-backend && npm run seed"
   },
-  "keywords": ["car-rental", "fullstack", "nodejs", "express", "mongodb"],
+  "keywords": [
+    "car-rental",
+    "fullstack",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
   "author": "DriveEasy",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
 }
