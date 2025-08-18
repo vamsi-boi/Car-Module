@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveEasy - Premium Car Rental Service</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class='bx bxs-car'></i>
+                <span>DriveEasy</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#cars" class="nav-link">Cars</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Find Your Perfect Ride</h1>
+                <p class="hero-description">
+                    Experience premium car rental service with our extensive fleet of well-maintained vehicles. 
+                    Book your dream car today and enjoy the journey!
+                </p>
+                <div class="hero-buttons">
+                    <a href="#cars" class="btn btn-primary">Browse Cars</a>
+                    <a href="#contact" class="btn btn-secondary">Get Quote</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Premium Car">
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Catalogue Section -->
+    <section id="cars" class="cars-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Car Collection</h2>
+                <p class="section-description">Choose from our premium fleet of vehicles</p>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="search-filter">
+                <div class="search-box">
+                    <i class='bx bx-search'></i>
+                    <input type="text" id="searchInput" placeholder="Search cars by name...">
+                </div>
+                <div class="filter-group">
+                    <select id="fuelFilter">
+                        <option value="">All Fuel Types</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="CNG">CNG</option>
+                        <option value="Electric">Electric</option>
+                    </select>
+                    <select id="priceFilter">
+                        <option value="">All Prices</option>
+                        <option value="0-2000">₹0 - ₹2000</option>
+                        <option value="2000-4000">₹2000 - ₹4000</option>
+                        <option value="4000-6000">₹4000 - ₹6000</option>
+                        <option value="6000+">₹6000+</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Cars Grid -->
+            <div class="cars-grid" id="carsGrid">
+                <!-- Cars will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-description">Why choose DriveEasy for your car rental needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bxs-car-mechanic'></i>
+                    </div>
+                    <h3>Well Maintained Cars</h3>
+                    <p>All our vehicles undergo regular maintenance and safety checks to ensure your comfort and safety.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bxs-time'></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our customer support team is available round the clock to assist you with any queries or emergencies.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bxs-map'></i>
+                    </div>
+                    <h3>GPS Navigation</h3>
+                    <p>Every car comes equipped with GPS navigation system to help you reach your destination easily.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bxs-credit-card'></i>
+                    </div>
+                    <h3>Flexible Payment</h3>
+                    <p>Multiple payment options including cash, cards, and online payments for your convenience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bxs-shield-check'></i>
+                    </div>
+                    <h3>Insurance Coverage</h3>
+                    <p>Comprehensive insurance coverage for all rentals to give you peace of mind during your journey.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bxs-home'></i>
+                    </div>
+                    <h3>Home Delivery</h3>
+                    <p>Get your rental car delivered to your doorstep and returned from any location in the city.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About DriveEasy</h2>
+                    <p>With over 10 years of experience in the car rental industry, DriveEasy has established itself as India's most trusted car rental service. We pride ourselves on providing quality vehicles, exceptional customer service, and competitive pricing.</p>
+                    <p>Our mission is to make car rental simple, affordable, and accessible to everyone. Whether you need a car for a business trip, family vacation, or daily commute, we have the perfect vehicle for your needs.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>10,000+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Cars Available</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Cities Covered</p>
+                        </div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Customer Support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/1119796/pexels-photo-1119796.jpeg?auto=compress&cs=tinysrgb&w=800" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Customer Reviews</h2>
+                <p class="section-description">What our customers say about us</p>
+            </div>
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Reviews will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for exclusive offers and updates</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div class="newsletter-message" id="newsletterMessage"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-description">Get in touch with our team</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class='bx bxs-map'></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Business District, Mumbai, Maharashtra 400001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class='bx bxs-phone'></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class='bx bxs-envelope'></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@driveeasy.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class='bx bxs-time'></i>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Mon - Sun: 6:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="contactName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contactEmail" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="contactPhone" placeholder="Your Phone">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class='bx bxs-car'></i>
+                        <span>DriveEasy</span>
+                    </div>
+                    <p>Your trusted partner for premium car rental services across India.</p>
+                    <div class="social-links">
+                        <a href="#"><i class='bx bxl-facebook'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#cars">Cars</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Self Drive</a></li>
+                        <li><a href="#">Chauffeur Drive</a></li>
+                        <li><a href="#">Monthly Rental</a></li>
+                        <li><a href="#">Corporate Rental</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DriveEasy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book Your Car</h2>
+            <div class="car-details" id="modalCarDetails">
+                <!-- Car details will be populated here -->
+            </div>
+            <form id="bookingForm" class="booking-form">
+                <div class="form-group">
+                    <label for="userName">Full Name *</label>
+                    <input type="text" id="userName" required>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email Address *</label>
+                    <input type="email" id="userEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Phone Number</label>
+                    <input type="tel" id="userPhone">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="startDate">Start Date *</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">End Date *</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="specialRequests">Special Requests</label>
+                    <textarea id="specialRequests" rows="3" placeholder="Any special requirements..."></textarea>
+                </div>
+                <div class="booking-summary" id="bookingSummary">
+                    <!-- Booking summary will be calculated here -->
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
