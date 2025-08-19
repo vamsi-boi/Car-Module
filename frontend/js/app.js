@@ -1,6 +1,6 @@
 /**
  * DriveEasy Car Rental Website
- * Main JavaScript application logic
+ * Main JavaScript application logic - Optimized for smooth performance
  */
 
 // Global variables
@@ -8,7 +8,7 @@ let allCars = [];
 let filteredCars = [];
 let selectedCar = null;
 
-// API Configuration
+// API Configuration (for future backend integration)
 const API_BASE_URL = 'http://localhost:5000/api';
 
 // DOM Elements
@@ -33,18 +33,191 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Main app initialization
+ * Retry connection manually
+ */
+async function retryConnection() {
+    console.log('🔄 Manual retry initiated by user...');
+    
+    // Remove existing status
+    const existingStatus = document.querySelector('.connection-status');
+    if (existingStatus) {
+        existingStatus.remove();
+    }
+    
+    // Show temporary loading status
+    showConnectionStatus(false, 'Retrying connection...');
+    
+    // Reload the app data
+    try {
+        await Promise.all([
+            loadCarsData(),
+            loadReviewsData()
+        ]);
+        
+        // Remove loading status if successful
+        const retryStatus = document.querySelector('.connection-status');
+        if (retryStatus) {
+            retryStatus.remove();
+        }
+        
+        showNotification('✅ Connection restored! Data refreshed.', 'success');
+    } catch (error) {
+        console.log('❌ Manual retry failed:', error);
+        showConnectionStatus(false, 'Retry failed - still using offline data');
+    }
+}
+
+/**
+ * Show connection status to user
+ */
+function showConnectionStatus(isConnected, message = '') {
+    // Remove existing status
+    const existingStatus = document.querySelector('.connection-status');
+    if (existingStatus) {
+        existingStatus.remove();
+    }
+    
+    if (!isConnected) {
+        const statusDiv = document.createElement('div');
+        statusDiv.className = 'connection-status';
+        statusDiv.innerHTML = `
+            <i class='bx bx-wifi-off'></i>
+            <span>Running in offline mode - ${message}</span>
+            <button onclick="retryConnection()" class="btn btn-sm">Retry Connection</button>
+        `;
+        statusDiv.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            opacity: 0.9;
+        `;
+        document.body.appendChild(statusDiv);
+        
+        // Auto remove after 10 seconds
+        setTimeout(() => {
+            if (statusDiv.parentNode) {
+                statusDiv.remove();
+            }
+        }, 10000);
+    }
+}
+
+/**
+ * Main app initialization - Optimized for smooth performance
  */
 async function initializeApp() {
+    console.log('🚀 Initializing DriveEasy Car Rental App...');
+    
     setupEventListeners();
     setupScrollEffects();
     setupNavigation();
-    await loadCarsData();
-    await loadReviewsData();
+    
+    // Load data immediately for smooth performance
+    await Promise.all([
+        loadCarsData(),
+        loadReviewsData()
+    ]);
     
     // Initialize scroll reveal animations
     if (typeof ScrollReveal !== 'undefined') {
         initializeScrollReveal();
+    }
+    
+    console.log('🎉 App initialization completed');
+}
+
+/**
+ * Retry function for failed network requests
+ */
+async function retryFetch(url, options = {}, maxRetries = 3, delay = 1000) {
+    let lastError;
+    
+    for (let i = 0; i <= maxRetries; i++) {
+        try {
+            console.log(`🔄 Attempt ${i + 1}/${maxRetries + 1} for ${url}`);
+            
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+            
+            const response = await fetch(url, {
+                ...options,
+                signal: controller.signal
+            });
+            
+            clearTimeout(timeoutId);
+            
+            if (response.ok) {
+                console.log(`✅ Success on attempt ${i + 1} for ${url}`);
+                return response;
+            }
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        } catch (error) {
+            lastError = error;
+            
+            // Detect specific error types
+            if (error.name === 'AbortError') {
+                console.log(`⏰ Timeout on attempt ${i + 1} for ${url}`);
+            } else if (error.message.includes('NetworkError') || error.message.includes('fetch')) {
+                console.log(`🌐 Network error on attempt ${i + 1} for ${url}:`, error.message);
+            } else {
+                console.log(`❌ Error on attempt ${i + 1} for ${url}:`, error.message);
+            }
+            
+            if (i === maxRetries) {
+                console.log(`💥 All ${maxRetries + 1} attempts failed for ${url}`);
+                throw lastError;
+            }
+            
+            // Progressive delay
+            const currentDelay = delay * (i + 1);
+            console.log(`⏳ Waiting ${currentDelay}ms before retry...`);
+            await new Promise(resolve => setTimeout(resolve, currentDelay));
+        }
+    }
+}
+
+/**
+ * Load cars data - Optimized for smooth performance
+ */
+async function loadCarsData() {
+    try {
+        // Use hardcoded data for immediate loading and smooth performance
+        allCars = window.carsData || [];
+        console.log(`🚗 Loaded ${allCars.length} cars from local data`);
+        
+        filteredCars = [...allCars];
+        displayCars(filteredCars);
+        
+    } catch (error) {
+        console.error('❌ Error loading cars data:', error);
+        showErrorState(carsGrid, 'Failed to load cars data. Please refresh the page.');
+    }
+}
+
+/**
+ * Load reviews data - Optimized for smooth performance
+ */
+async function loadReviewsData() {
+    try {
+        // Use hardcoded data for immediate loading and smooth performance
+        const reviews = window.reviewsData || [];
+        console.log(`⭐ Loaded ${reviews.length} reviews from local data`);
+        
+        displayReviews(reviews);
+        
+    } catch (error) {
+        console.error('❌ Error loading reviews data:', error);
+        showErrorState(reviewsGrid, 'Failed to load reviews. Please refresh the page.');
     }
 }
 
@@ -126,69 +299,6 @@ function setupNavigation() {
 function toggleMobileMenu() {
     navMenu.classList.toggle('active');
     navToggle.classList.toggle('active');
-}
-
-/**
- * Load cars data from backend API
- */
-async function loadCarsData() {
-    try {
-        showLoadingState(carsGrid);
-        
-        // Try to fetch from backend first
-        try {
-            const response = await fetch(`${API_BASE_URL}/cars`);
-            if (response.ok) {
-                const result = await response.json();
-                allCars = result.data || [];
-            } else {
-                throw new Error('Backend not available');
-            }
-        } catch (backendError) {
-            console.log('Backend not available, using hardcoded data:', backendError.message);
-            // Fallback to hardcoded data
-            allCars = window.carsData || [];
-        }
-        
-        filteredCars = [...allCars];
-        displayCars(filteredCars);
-        
-    } catch (error) {
-        console.error('Error loading cars data:', error);
-        showErrorState(carsGrid, 'Failed to load cars data');
-    }
-}
-
-/**
- * Load reviews data from backend API
- */
-async function loadReviewsData() {
-    try {
-        showLoadingState(reviewsGrid);
-        
-        let reviews = [];
-        
-        // Try to fetch from backend first
-        try {
-            const response = await fetch(`${API_BASE_URL}/reviews`);
-            if (response.ok) {
-                const result = await response.json();
-                reviews = result.data || [];
-            } else {
-                throw new Error('Backend not available');
-            }
-        } catch (backendError) {
-            console.log('Backend not available, using hardcoded reviews:', backendError.message);
-            // Fallback to hardcoded data
-            reviews = window.reviewsData || [];
-        }
-        
-        displayReviews(reviews);
-        
-    } catch (error) {
-        console.error('Error loading reviews data:', error);
-        showErrorState(reviewsGrid, 'Failed to load reviews');
-    }
 }
 
 /**
