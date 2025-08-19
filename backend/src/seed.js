@@ -22,184 +22,85 @@ const connectDB = async () => {
 // Sample Indian cars data
 const sampleCars = [
   {
-    name: "Maruti Swift Dzire",
-    type: "Hatchback",
-    pricePerDay: 1400,
-    seats: 5,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
-    features: ["AC", "Power Steering", "Central Locking", "ABS"]
-  },
-  {
-    name: "Tata Indica",
-    type: "Hatchback",
-    pricePerDay: 1000,
-    seats: 5,
+    name: "Toyota Innova Crysta",
+    type: "MPV",
+    pricePerDay: 3200,
+    seats: 7,
     fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
-    features: ["AC", "Power Steering", "Music System"]
+    imageUrl: "assets/IMG-20250818-WA0002.jpg",
+    features: ["AC", "Power Steering", "Central Locking", "ABS", "LED Headlights", "Alloy Wheels", "Premium Interior"]
   },
   {
-    name: "Hyundai i10",
-    type: "Hatchback",
-    pricePerDay: 1200,
-    seats: 5,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/1319845/pexels-photo-1319845.jpeg",
-    features: ["AC", "Power Windows", "Central Locking"]
-  },
-  {
-    name: "Maruti Alto 800",
-    type: "Hatchback",
-    pricePerDay: 900,
-    seats: 4,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
-    features: ["Basic AC", "Power Steering"]
-  },
-  {
-    name: "Hyundai Santro",
-    type: "Hatchback",
-    pricePerDay: 1100,
-    seats: 5,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/1319845/pexels-photo-1319845.jpeg",
-    features: ["AC", "Power Steering", "Music System"]
-  },
-  {
-    name: "Tata Nano",
-    type: "Hatchback",
-    pricePerDay: 800,
-    seats: 4,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
-    features: ["Basic Features", "Compact Design"]
-  },
-  {
-    name: "Maruti Wagon R",
-    type: "Hatchback",
-    pricePerDay: 1300,
-    seats: 5,
-    fuelType: "CNG",
-    imageUrl: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
-    features: ["AC", "Power Steering", "Tall Boy Design"]
-  },
-  {
-    name: "Hyundai Accent",
-    type: "SUV",
-    pricePerDay: 1800,
-    seats: 5,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg",
-    features: ["AC", "Power Windows", "Music System", "ABS"]
-  },
-  {
-    name: "Tata Indigo",
-    type: "Sedan",
-    pricePerDay: 1600,
-    seats: 5,
-    fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg",
-    features: ["AC", "Power Windows", "Central Locking"]
-  },
-  {
-    name: "Maruti Esteem",
-    type: "Sedan",
-    pricePerDay: 1500,
-    seats: 5,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg",
-    features: ["AC", "Power Steering", "Music System"]
-  },
-  {
-    name: "Mahindra Scorpio",
+    name: "Kia Seltos",
     type: "SUV",
     pricePerDay: 2800,
-    seats: 7,
-    fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg",
-    features: ["4WD", "AC", "Power Steering", "High Ground Clearance"]
-  },
-  {
-    name: "Tata Sumo",
-    type: "SUV",
-    pricePerDay: 2200,
-    seats: 9,
-    fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg",
-    features: ["AC", "High Seating", "Spacious Interior"]
-  },
-  {
-    name: "Maruti Omni",
-    type: "SUV",
-    pricePerDay: 1400,
-    seats: 8,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg",
-    features: ["AC", "Sliding Doors", "Commercial Use"]
-  },
-  {
-    name: "Hyundai Getz",
-    type: "Hatchback",
-    pricePerDay: 1300,
     seats: 5,
     fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/1319845/pexels-photo-1319845.jpeg",
-    features: ["AC", "Power Windows", "ABS", "Airbags"]
+    imageUrl: "assets/IMG-20250818-WA0003.jpg",
+    features: ["AC", "LED Headlights", "Tiger Nose Grille", "Alloy Wheels", "Premium Interior", "Sunroof"]
   },
   {
-    name: "Tata Safari",
-    type: "Luxury",
-    pricePerDay: 3500,
-    seats: 7,
-    fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
-    features: ["4WD", "Leather Seats", "Premium Interior", "AC"]
-  },
-  {
-    name: "Mahindra Bolero",
-    type: "SUV",
+    name: "Renault Triber",
+    type: "MPV",
     pricePerDay: 2000,
     seats: 7,
-    fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg",
-    features: ["AC", "High Ground Clearance", "Rugged Build"]
-  },
-  {
-    name: "Honda Civic",
-    type: "Luxury",
-    pricePerDay: 2800,
-    seats: 5,
     fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
-    features: ["AC", "Automatic", "Premium Interior", "Sunroof"]
+    imageUrl: "assets/IMG-20250818-WA0004.jpg",
+    features: ["AC", "Power Windows", "LED DRLs", "Roof Rails", "Dual-tone Design", "Compact SUV"]
   },
   {
-    name: "Maruti Zen",
-    type: "Hatchback", 
-    pricePerDay: 1100,
-    seats: 5,
-    fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
-    features: ["AC", "Power Steering", "Music System"]
-  },
-  {
-    name: "Tata Venture",
-    type: "SUV",
-    pricePerDay: 1800,
-    seats: 7,
-    fuelType: "Diesel",
-    imageUrl: "https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg",
-    features: ["AC", "Spacious", "Commercial Vehicle"]
-  },
-  {
-    name: "Hyundai Verna",
-    type: "Luxury",
+    name: "Honda City",
+    type: "Sedan",
     pricePerDay: 2500,
     seats: 5,
     fuelType: "Petrol",
-    imageUrl: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
-    features: ["AC", "Automatic", "Sunroof", "Premium Features"]
+    imageUrl: "assets/IMG-20250818-WA0005.jpg",
+    features: ["AC", "LED Headlights", "Panoramic Sunroof", "Alloy Wheels", "Premium Interior", "Automatic"]
+  },
+  {
+    name: "Tata Nexon",
+    type: "SUV",
+    pricePerDay: 2700,
+    seats: 5,
+    fuelType: "Petrol",
+    imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/47481/nexon-exterior-right-front-three-quarter-3.jpeg?isig=0",
+    features: ["AC", "LED Headlights", "Electric Drive", "Alloy Wheels", "Zero Emissions", "Fast Charging"]
+  },
+  {
+    name: "Maruti Suzuki Swift",
+    type: "Hatchback",
+    pricePerDay: 1800,
+    seats: 5,
+    fuelType: "Petrol",
+    imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/137109/swift-exterior-right-front-three-quarter-5.jpeg?isig=0",
+    features: ["AC", "LED DRLs", "Floating Roof", "Alloy Wheels", "Compact Design", "Fuel Efficient"]
+  },
+  {
+    name: "Mahindra XUV700",
+    type: "SUV",
+    pricePerDay: 3600,
+    seats: 7,
+    fuelType: "Diesel",
+    imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/127067/xuv700-exterior-right-front-three-quarter.jpeg?isig=0",
+    features: ["AC", "LED Headlights", "Panoramic Sunroof", "Alloy Wheels", "Premium Interior", "ADAS Features"]
+  },
+  {
+    name: "Hyundai Verna",
+    type: "Sedan",
+    pricePerDay: 2400,
+    seats: 5,
+    fuelType: "Petrol",
+    imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/41180/verna-exterior-right-front-three-quarter-5.jpeg?isig=0",
+    features: ["AC", "LED Headlights", "Premium Interior", "Alloy Wheels", "Automatic", "Sunroof"]
+  },
+  {
+    name: "Toyota Fortuner",
+    type: "SUV",
+    pricePerDay: 4000,
+    seats: 7,
+    fuelType: "Diesel",
+    imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/100451/fortuner-exterior-right-front-three-quarter-4.jpeg?isig=0",
+    features: ["AC", "LED Headlights", "4WD", "Alloy Wheels", "Premium Interior", "High Ground Clearance"]
   }
 ];
 
@@ -248,7 +149,7 @@ const seedDatabase = async () => {
     
     // Insert sample cars
     await Car.insertMany(sampleCars);
-    console.log('🚗 Inserted 20 sample cars');
+    console.log('🚗 Inserted 9 sample cars');
     
     // Insert sample reviews
     await Review.insertMany(sampleReviews);

@@ -1,26 +1,18 @@
 {
-  "name": "car-rental-fullstack",
+  "name": "driveeasy-car-rental",
   "version": "1.0.0",
-  "description": "Complete full-stack car rental website with frontend and backend",
+  "description": "Premium Car Rental Service Website",
   "main": "index.js",
   "scripts": {
-    "dev": "cd frontend && npx serve -s . -l 5173",
-    "backend": "npm --prefix backend start",
-    "backend-dev": "npm --prefix backend run dev",
-    "seed": "npm --prefix backend run seed",
-    "install-backend": "npm --prefix backend install",
-    "setup": "npm run install-backend && npm run seed"
+    "dev": "cd frontend && python -m http.server 8000",
+    "start": "cd backend && npm start",
+    "build": "echo 'Frontend is static, no build required'",
+    "deploy": "vercel --prod"
   },
-  "keywords": [
-    "car-rental",
-    "fullstack",
-    "nodejs",
-    "express",
-    "mongodb"
-  ],
-  "author": "DriveEasy",
+  "keywords": ["car-rental", "driveeasy", "frontend", "backend"],
+  "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
-    "serve": "^14.2.4"
+    "vercel": "^32.0.0"
   }
 }
