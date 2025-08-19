@@ -13,7 +13,7 @@ const carsData = [
         pricePerDay: 3200,
         seats: 7,
         fuelType: "Diesel",
-        imageUrl: "assets/IMG-20250818-WA0002.jpg",
+        imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/100451/innova-crysta-exterior-right-front-three-quarter-4.jpeg?isig=0",
         available: true,
         features: ["AC", "Power Steering", "Central Locking", "ABS", "LED Headlights", "Alloy Wheels", "Premium Interior"]
     },
@@ -24,7 +24,7 @@ const carsData = [
         pricePerDay: 2800,
         seats: 5,
         fuelType: "Petrol",
-        imageUrl: "assets/IMG-20250818-WA0003.jpg",
+        imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/127067/seltos-exterior-right-front-three-quarter-5.jpeg?isig=0",
         available: true,
         features: ["AC", "LED Headlights", "Tiger Nose Grille", "Alloy Wheels", "Premium Interior", "Sunroof"]
     },
@@ -35,7 +35,7 @@ const carsData = [
         pricePerDay: 2000,
         seats: 7,
         fuelType: "Petrol",
-        imageUrl: "assets/IMG-20250818-WA0004.jpg",
+        imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/47481/triber-exterior-right-front-three-quarter-3.jpeg?isig=0",
         available: true,
         features: ["AC", "Power Windows", "LED DRLs", "Roof Rails", "Dual-tone Design", "Compact SUV"]
     },
@@ -46,7 +46,7 @@ const carsData = [
         pricePerDay: 2500,
         seats: 5,
         fuelType: "Petrol",
-        imageUrl: "assets/IMG-20250818-WA0005.jpg",
+        imageUrl: "https://imgd.aeplcdn.com/664x374/n/cw/ec/41180/city-exterior-right-front-three-quarter-5.jpeg?isig=0",
         available: true,
         features: ["AC", "LED Headlights", "Panoramic Sunroof", "Alloy Wheels", "Premium Interior", "Automatic"]
     },
